@@ -56,7 +56,8 @@ if (isset($_POST['btn-save'])) {
             <!-- Phone -->
             <div class="mb-4">
                 <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{9,12}" placeholder="Enter phone number" required
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9,12}" placeholder="Enter phone number"
+                    required
                     class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
