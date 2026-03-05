@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Jersey+10&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.start2P{
+  font-family: "Press Start 2P", system-ui;
+}
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-ibm {
+  font-family: "IBM Plex Sans", sans-serif;
+
+}
+.font-jerry{
+  font-family: "Jersey 10", sans-serif;
+
+}
+.font-space{
+  font-family: "Space Grotesk", sans-serif;
+
+}
+@keyframes tailwindShadowChange {
+  0% {
+      box-shadow:
+      0 10px 15px -3px #08ff39,
+      0 4px 6px -4px #84ff97;
+  }
+  33% {
+      box-shadow:
+      0 10px 15px -3px #6367FF,
+      0 4px 6px -4px #6367FF;
+  }
+  66% {
+      box-shadow:
+      0 10px 15px -3px #FFDBFD,
+      0 4px 6px -4px #FFDBFD;
+  }
+  100% {
+      box-shadow:
+      0 10px 15px -3px #8494FF,
+      0 4px 6px -4px #8494FF;
+  }
+}
+
+.animate-tailwind-shadow {
+  animation: tailwindShadowChange 4s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.butterfly {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 50%;
+  animation: fly 10s linear infinite;
+}
+
+.wing {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to top right, #f87171, #fbbf24);
+  border-radius: 50% 50% 0 50%;
+  transform-origin: bottom left;
+  animation: flap 0.5s ease-in-out infinite alternate;
+}
+
+.wing.right {
+  left: 10px;
+  transform-origin: bottom right;
+  border-radius: 50% 50% 50% 0;
+}
+
+.body {
+  position: absolute;
+  width: 6px;
+  height: 20px;
+  background: #4b5563;
+  left: 7px;
+  top: 0;
+  border-radius: 3px;
+}

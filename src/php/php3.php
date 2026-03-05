@@ -204,6 +204,7 @@ if (isset($_POST['save'])) {
 
             <button type="submit" name="save" class="btn-login">Log in</button>
         </form>
+        
 
         <div class="divider">or continue with</div>
 

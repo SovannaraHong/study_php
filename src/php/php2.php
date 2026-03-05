@@ -23,29 +23,29 @@ if (isset($_POST['btn-save'])) {
 
 <body>
 
+
     <div>
-        <form class="bg-white p-8 rounded-lg shadow-md w-full max-w-md" action="php2.php" method="post">
-            <h2 class="text-2xl font-bold mb-6 text-center">Personal Information</h2>
+        <form class="p-8 w-full max-w-md bg-white rounded-lg shadow-md" action="php2.php" method="post">
+            <h2 class="mb-6 text-2xl font-bold text-center">Personal Information</h2>
 
             <!-- ID -->
             <div class="mb-4">
-                <label for="id" class="block text-gray-700 font-semibold mb-2">ID</label>
+                <label for="id" class="block mb-2 font-semibold text-gray-700">ID</label>
                 <input type="text" id="id" name="id" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-3 py-2 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <!-- Name -->
             <div class="mb-4">
-                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                <label for="name" class="block mb-2 font-semibold text-gray-700">Name</label>
                 <input type="text" id="name" name="name" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-3 py-2 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-
             <!-- Gender -->
             <div class="mb-4">
-                <label for="gender" class="block text-gray-700 font-semibold mb-2">Gender</label>
+                <label for="gender" class="block mb-2 font-semibold text-gray-700">Gender</label>
                 <select id="gender" name="gender" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-3 py-2 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="">--Select Gender--</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -55,17 +55,17 @@ if (isset($_POST['btn-save'])) {
 
             <!-- Phone -->
             <div class="mb-4">
-                <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                <label for="phone" class="block mb-2 font-semibold text-gray-700">Phone</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{9,12}" placeholder="Enter phone number"
                     required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-3 py-2 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <!-- Province -->
             <div class="mb-6">
-                <label for="province" class="block text-gray-700 font-semibold mb-2">Province</label>
+                <label for="province" class="block mb-2 font-semibold text-gray-700">Province</label>
                 <select id="province" name="province" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="px-3 py-2 w-full rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="">--Select Province--</option>
                     <option value="phnom-penh">Phnom Penh</option>
                     <option value="kandal">Kandal</option>
@@ -78,37 +78,37 @@ if (isset($_POST['btn-save'])) {
 
             <!-- Submit Button -->
             <button type="submit" name="btn-save"
-                class="w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition-colors">
+                class="py-2 w-full font-semibold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
                 Submit
             </button>
         </form>
     </div>
-    <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold mb-6 text-center">User List</h2>
+    <div class="p-6 mx-auto max-w-5xl bg-white rounded-lg shadow-md">
+        <h2 class="mb-6 text-2xl font-bold text-center">User List</h2>
 
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white border border-gray-200">
                 <thead>
-                    <tr class="bg-blue-500 text-white text-left">
-                        <th class="py-3 px-4">ID</th>
-                        <th class="py-3 px-4">Name</th>
-                        <th class="py-3 px-4">Gender</th>
-                        <th class="py-3 px-4">Phone</th>
-                        <th class="py-3 px-4">Province</th>
-                        <th class="py-3 px-4">Action</th>
+                    <tr class="text-left text-white bg-blue-500">
+                        <th class="px-4 py-3">ID</th>
+                        <th class="px-4 py-3">Name</th>
+                        <th class="px-4 py-3">Gender</th>
+                        <th class="px-4 py-3">Phone</th>
+                        <th class="px-4 py-3">Province</th>
+                        <th class="px-4 py-3">Action</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700">
                     <?php if (!empty($id)): ?>
                         <tr class="border-b hover:bg-gray-100">
-                            <td class="py-2 px-4"><?= $id ?></td>
-                            <td class="py-2 px-4">J<?= $name ?></td>
-                            <td class="py-2 px-4"><?= $gender ?></td>
-                            <td class="py-2 px-4"><?= $phone ?></td>
-                            <td class="py-2 px-4"><?= $pro ?></td>
-                            <td class="py-2 px-4">
-                                <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Edit</button>
-                                <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Delete</button>
+                            <td class="px-4 py-2"><?= $id ?></td>
+                            <td class="px-4 py-2">J<?= $name ?></td>
+                            <td class="px-4 py-2"><?= $gender ?></td>
+                            <td class="px-4 py-2"><?= $phone ?></td>
+                            <td class="px-4 py-2"><?= $pro ?></td>
+                            <td class="px-4 py-2">
+                                <button class="px-2 py-1 text-white bg-green-500 rounded hover:bg-green-600">Edit</button>
+                                <button class="px-2 py-1 text-white bg-red-500 rounded hover:bg-red-600">Delete</button>
                             </td>
                         </tr>
                     <?php endif ?>
