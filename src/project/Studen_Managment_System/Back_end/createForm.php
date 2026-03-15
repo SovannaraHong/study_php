@@ -56,7 +56,7 @@ if (isset($_POST['btn-submit'])) {
     $province    = $_POST['province'];
     $postalCode  = $_POST['txt-pinCode'];
     $country     = $_POST['country'];
-    $hubbiesPost = $_POST['hub'];
+    $hubbiesPost = implode(", ", $_POST['hub']);
     $picture     = $_FILES['picture'];
     $qualification = $_POST['qualification'];
     $course      = $_POST['course'];
@@ -296,7 +296,6 @@ if (isset($_POST['btn-submit'])) {
         <div id="left" class="w-1/4 min-h-[350px] p-3 font-bold text-[20px] border-4 rounded-2xl relative overflow-hidden"
             style="font-family:'Nunito',sans-serif;">
             <h2><?= $firstName ?></h2>
-            <h2><?= $firstName ?></h2>
             <h3><?= $lastName ?></h3>
             <p>Email: <?= $email ?></p>
             <p>Phone: <?= $phone ?></p>
@@ -377,8 +376,10 @@ if (isset($_POST['btn-submit'])) {
                                 </select>
                                 <select name="month" class="p-2 rounded-lg border text-[16px]">
                                     <option value="">--Month--</option>
-                                    <?php foreach ($months as $index => $month) : ?>
-                                        <option value="<?= $index + 1 ?>"><?= $month ?></option>
+                                    <?php foreach ($months as $index => $m) : ?>
+                                        <option value="<?= $index + 1 ?>" <?= ($month == ($index + 1)) ? 'selected' : '' ?>>
+                                            <?= $m ?>
+                                        </option>
                                     <?php endforeach; ?>
                                 </select>
                                 <select name="year" class="p-2 rounded-lg border text-[16px]">
@@ -386,7 +387,9 @@ if (isset($_POST['btn-submit'])) {
                                     <?php
                                     $currentYear = date("Y");
                                     for ($y = $currentYear; $y >= 1900; $y--) : ?>
-                                        <option value="<?= $y ?>"><?= $y ?></option>
+                                        <option value="<?= $y ?>" <?= ($year == $y) ? 'selected' : '' ?>>
+                                            <?= $y ?>
+                                        </option>
                                     <?php endfor; ?>
                                 </select>
                             </div>
