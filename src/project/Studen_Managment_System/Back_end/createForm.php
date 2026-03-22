@@ -295,8 +295,8 @@ if (isset($_POST['btn-submit'])) {
 
         <div id="left" class="w-1/4 min-h-[350px] p-3 font-bold text-[20px] border-4 rounded-2xl relative overflow-hidden"
             style="font-family:'Nunito',sans-serif;">
-            <h2><?= $firstName ?></h2>
-            <h3><?= $lastName ?></h3>
+            <h2>FirstName: <?= $firstName ?></h2>
+            <h3>LastName: <?= $lastName ?></h3>
             <p>Email: <?= $email ?></p>
             <p>Phone: <?= $phone ?></p>
             <p>Gender: <?= $gender ?></p>
@@ -309,6 +309,7 @@ if (isset($_POST['btn-submit'])) {
             <p>Hobbies: <?= $hubbiesPost ?></p>
             <p>Qualification: <?= $qualification ?></p>
             <p>Course: <?= $course ?></p>
+
 
 
             <div id="left-rain"></div>
@@ -324,12 +325,16 @@ if (isset($_POST['btn-submit'])) {
                 <span class="text-[24px] font-bold tracking-widest font-space uppercase">
                     Student <span style="color:#b8e4f7;">Registration</span> Form
                 </span>
+
             </div>
 
-            <div id="toolbar" class="min-h-[38px] border-4 rounded-2xl" style="border-color:var(--rain-light);"></div>
+            <div id="toolbar" class="min-h-[38px] border-4 rounded-2xl" style="border-color:var(--rain-light);">
+
+
+            </div>
 
             <div id="content">
-                <form class="w-full font-space" action="" method="post" enctype="multipart/form-data">
+                <form class="w-full font-space" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                     <fieldset class="px-5 pb-5 rounded-2xl border-4">
 
                         <div class="flex flex-col gap-2 mb-4">
@@ -399,12 +404,10 @@ if (isset($_POST['btn-submit'])) {
                             <label class="font-semibold text-[18px]" style="color:var(--rain-deep);">Address :</label>
                             <textarea name="txt-address" rows="3" value='<?= $address ?>' class="p-2.5 w-full rounded-lg border text-[17px]"></textarea>
                         </div>
-                        php
                         <div class="flex flex-col gap-2 mb-4">
                             <label class="font-semibold text-[18px]" style="color:var(--rain-deep);">City :</label>
                             <input name="city" type="text" value="<?= $city ?>" class="p-2.5 rounded-lg border text-[17px]">
                         </div>
-                        php
                         <div class="flex flex-col gap-2 mb-4">
                             <label class="font-semibold text-[18px]" style="color:var(--rain-deep);">Pin Code :</label>
                             <input name="txt-pinCode" type="text" value="<?= $postalCode ?>" class="p-2.5 rounded-lg border text-[17px]">

@@ -1,0 +1,5 @@
+<?php
+echo $_SERVER['PHP_SELF'];
+echo $_SERVER['REQUEST_METHOD'];
+echo $_SERVER['REMOTE_ADDR'];
+echo $_SERVER['HTTP_USER_AGENT'];
