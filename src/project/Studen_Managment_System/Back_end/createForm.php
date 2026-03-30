@@ -41,11 +41,12 @@ $hubbiesPost = "";
 $picture = "";
 $qualification = "";
 $course = "";
-
+$password = "";
 if (isset($_POST['btn-submit'])) {
     $firstName   = $_POST['txt-fistName'];
     $lastName    = $_POST['txt-lastName'];
     $email       = $_POST['txt-email'];
+    $password       = $_POST['txt-password'];
     $phone       = $_POST['txt-phone'];
     $day         = $_POST['day'];
     $month       = $_POST['month'];
@@ -350,6 +351,11 @@ if (isset($_POST['btn-submit'])) {
                         <div class="flex flex-col gap-2 mb-4">
                             <label class="font-semibold text-[18px]" style="color:var(--rain-deep);">Email ID :</label>
                             <input name="txt-email" type="email" value="<?= $email ?>" class="p-2.5 w-full rounded-lg border text-[17px]">
+                        </div>
+
+                        <div class="flex flex-col gap-2 mb-4">
+                            <label class="font-semibold text-[18px]" style="color:var(--rain-deep);">Password :</label>
+                            <input name="txt-password" type="password" value="<?= $password ?>" class="p-2.5 w-full rounded-lg border text-[17px]">
                         </div>
 
                         <div class="flex flex-col gap-2 mb-4">
