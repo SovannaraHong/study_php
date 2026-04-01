@@ -1,0 +1,1 @@
+<h1> THIS IS FOOTER PAGE </h1>

@@ -157,3 +157,78 @@ $p = '/[0-9]+(\.[0-9]+)?/';
 echo preg_replace($p, $r, $number);
 
 ?>
+
+<h1>
+    Function --------------------------------------
+</h1>
+
+<?php
+function sayHello()
+{
+    echo 'Hello nig' . '<br>';
+}
+sayHello();
+
+function defaultFun($default = 40)
+{
+    echo $default . '<br>';
+}
+defaultFun();
+defaultFun(49);
+
+function sum(int $number1, int $number2)
+{
+    return $number1 + $number2;
+}
+$result = sum(20, 30);
+echo $result . '<br>';
+
+$y = 20;
+function testGlobal()
+{
+    global $y; //need to use keyword global for assess var global
+    echo $y;
+}
+testGlobal();
+echo ' static scope' . '<br>';
+
+function countFun()
+{
+
+    static $count = 0;
+    $count++;
+    echo $count . '<br>';
+}
+countFun();
+countFun();
+countFun();
+countFun();
+
+// if one change it change auto 
+function s(int &$a) // arg pass by refer
+{
+    $a = $a + 5;
+}
+$value = 5;
+s($value);
+echo $value . '<br>';
+
+$a = 90;
+$b = &$a; // it the same location like var b
+$b = 100;
+echo $b;
+echo $a;
+?>
+
+<h1>include ,require,include_once,require_once</h1>
+<?php
+
+include 'header.php'; //include a lot
+include_once 'header.php'; //include only one
+require 'header.php'; // if have error error all under this code 
+
+echo 'default';
+include '../front_end/footer.php';
+
+
+?>
