@@ -115,8 +115,32 @@ foreach ($studentName as $name) {
 }
 echo "--------------------------------" . "<br>";
 
+echo 'sort all ' . "<br>";
+$books = ["php" => "hypertext Pro", "css" => "cascading style sheet", "js" => "javaScrip"];
+
+sort($books);
+foreach ($books as $b => $item) {
+    echo $b . " " . $item . "<br>";
+};
+
 
 echo "--------------------------------" . "<br>";
 
+echo 'no sort  index ' . "<br>";
+$books = ["php" => "hypertext Pro", "css" => "cascading style sheet", "js" => "javaScrip"];
+
+asort($books);
+foreach ($books as $b => $item) {
+    echo $b . " " . $item . "<br>";
+};
+echo "--------------------------------" . "<br>";
+
+echo 'revers ' . "<br>";
+$books = ["php" => "hypertext Pro", "css" => "cascading style sheet", "js" => "javaScrip"];
+
+rsort($books);
+foreach ($books as $b => $item) {
+    echo $b . " " . $item . "<br>";
+};
 
 ?>
