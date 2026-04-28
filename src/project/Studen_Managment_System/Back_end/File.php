@@ -16,5 +16,6 @@ if (is_readable('file.txt')) {
 } else {
     echo 'cannot read' . '<br>';
 }
-
+//rename file 
+// $email = htmlspecialchars($_POST['email']);
 ?>
