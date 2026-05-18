@@ -37,29 +37,63 @@ if (is_dir($path)) {
     </div>
 
     <!-- Create folder -->
+
     <?php
 
-    mkdir("helloABC");
-    rmdir("helloABC");
+    $errorFileUploading = "";
+    $success = "";
 
-    ?><form action="Folder.php" method="post" enctype="multipart/form-data">
-
-        <label for="title">Choose picture</label>
-        <input type="file" name="img" id="" accept="image/*">
-        <button type="submit" name="submit">submit</button>
-    </form>
-    <?php
-    $path = 'img/';
     if (isset($_POST['submit'])) {
 
-        $fileName = time() . "_" . $_FILES['img']['name'];
-        $tmpName  = $_FILES['img']['tmp_name'];
-        $target   = $path . $fileName;
+        foreach ($_FILES['myImage']['name'] as $key => $fileName) {
 
-        if (move_uploaded_file($tmpName, $target)) {
-            echo "Upload success <br>";
-        } else {
-            echo "Upload failed <br>";
+
+            $error = $_FILES['myImage']['error'][$key];
+            // $fileName = $_FILES['myImage']['name'];
+            $fileType = $_FILES['myImage']['type'][$key];
+            $fileSize = ($_FILES['myImage']['size'][$key] / 1024) / 1024;
+
+            $source = $_FILES['myImage']['tmp_name'][$key];
+            $destination = "img/" . $fileName;
+
+            if (
+                $fileType == "image/png" ||
+                $fileType == "image/jpeg" ||
+                $fileType == "image/gif" ||
+                $fileType == "image/jpg" ||
+                $fileType == "image/webp"
+            ) {
+
+                if ($fileSize <= 50) {
+
+                    if ($error == 0) {
+
+                        if (move_uploaded_file($source, $destination)) {
+                            $success = "Your file has uploaded successfully.";
+                        }
+                    } else {
+
+                        $errorFileUploading = "An error has occurred while uploading your file. Error number is: $error";
+                    }
+                } else {
+
+                    $errorFileUploading = "Your file size has exceeded 50MB";
+                }
+            } else {
+
+                $errorFileUploading = "Invalid file format.";
+            }
         }
     }
+    ?>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <label>ជ្រើសរើសរូបភាព៖</label>
+        <input type="file" name="myImage[]" multiple>
+        <button type="submit" name="submit">បង្ហោះរូបភាព</button>
+    </form>
+
+    <?php
+    echo $success;
+    echo $errorFileUploading;
     ?>
